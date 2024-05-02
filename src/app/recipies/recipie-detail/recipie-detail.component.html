@@ -1,0 +1,27 @@
+<div class="card" style="width: 53rem;">
+  <img class="card-img-top img-responsive img-thumbnail img-rounded" [src]="recipie.imagePath" alt="{{ recipie.name }}" style="border:1px solid grey;">
+  <div class="card-body">
+    <h3 class="card-title">{{ recipie.name }}</h3>
+    <h5 class="card-text">{{ recipie.description }}</h5>
+    <div
+      class="btn-group"
+      appDropdown>
+      <button
+       type="button"
+       class="btn btn-primary dropdown-toggle">
+       Manage Recipie<span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a (click)="onAddToShoppingList()" style="cursor: pointer;">Add Ingredients</a></li>
+        <li><a href="#">Edit Recipie</a></li>
+        <li><a href="#">Delete Recipie</a></li>
+      </ul>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item"
+      *ngFor="let i of recipie.ingredients">
+      {{ i.name }}-{{ i.amount }}
+      </li>
+    </ul>
+  </div>
+</div>

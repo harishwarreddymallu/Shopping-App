@@ -1,0 +1,19 @@
+<a
+  href="#"
+  class="list-group-item clearfix"
+  (click)="onSelected()">
+      <div class="pull-left">
+        <!-- Display the dynamic recipe name -->
+        <h4 class="list-group-item-heading">{{ recipie.name }}</h4>
+        <!-- Display the dynamic recipe description -->
+        <p class="list-group-item">{{ recipie.description }}</p>
+      </div>
+      <span class="pull-right">
+        <!-- Assuming you have an image URL property in your recipe object, display the image -->
+        <img
+          [src]="recipie.imagePath"
+           alt="{{ recipie.name }}"
+           class="img-responsive"
+           style="max-height: 50px;">
+      </span>
+</a>
